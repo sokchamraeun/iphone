@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Product</title>
+</head>
+<style>
+.todo {
+    padding: 1.5em;
+    border-radius: .5em;
+    background-color: var(--bg-light);
+    opacity: 0;
+    transition: 1000ms ease;
+}
+
+.todo.show {
+    opacity: 1;
+} 
+</style>
+<body>
+    <section class="fixed top-0 right-0 w-full z-50" >
+        <div class=" ">
+            <div class="  flex justify-between items-center shadow-lg bg-teal-100  rounded  ">
+                <div class="logo">
+                    <img class="w-25 sm:w-30 md:w-40 m-4 rounded-lg "  src="./images/image.png" alt="">
+                </div>
+                <nav class="hidden md:flex gap-6 font-bold lg:gap-15  mr-5 text-lg md:text-xl">
+                    <a class="hover:text-red-500 transition duration-250" href="">Home</a>
+                    <a class="hover:text-red-500 transition duration-250" href="">About</a>
+                    <a class="hover:text-red-500 transition duration-250" href="">Service</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <section class="mt-20 sm:mt-40">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10  m-5">
+                <!-- one item -->
+            <div class=" place-items-center">
+                <div class="todo block cart-body  w-80 h-110 pt-2  bg-blue-200 rounded-xl place-items-center relative">
+                    <img class="w-70 rounded-xl mt-5" src="./images/image.png" alt="">
+                    <div>
+                        <div class="name mt-5 font-bold text-xl ">Iphone 17 Pro Max</div>
+                        <div class="price  font-bold text-xl mt-3 mb-15">2000$</div>
+                        <button class="absolute bottom-5 right-5 bg-yellow-300 py-2 px-5 rounded-lg">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <div class=" place-items-center">
+                <div class="todo block cart-body  w-80 h-110 pt-2  bg-blue-200 rounded-xl place-items-center relative">
+                    <img class="w-70 rounded-xl mt-5" src="./images/image.png" alt="">
+                    <div>
+                        <div class="name mt-5 font-bold text-xl ">Iphone 17 Pro Max</div>
+                        <div class="price  font-bold text-xl mt-3 mb-15">2000$</div>
+                        <button class="absolute bottom-5 right-5 bg-yellow-300 py-2 px-5 rounded-lg">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <div class=" place-items-center">
+                <div class="todo block cart-body  w-80 h-110 pt-2  bg-blue-200 rounded-xl place-items-center relative">
+                    <img class="w-70 rounded-xl mt-5" src="./images/image.png" alt="">
+                    <div>
+                        <div class="name mt-5 font-bold text-xl ">Iphone 17 Pro Max</div>
+                        <div class="price  font-bold text-xl mt-3 mb-15">2000$</div>
+                        <button class="absolute bottom-5 right-5 bg-yellow-300 py-2 px-5 rounded-lg">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <div class=" place-items-center">
+                <div class="todo block cart-body  w-80 h-110 pt-2  bg-blue-200 rounded-xl place-items-center relative">
+                    <img class="w-70 rounded-xl mt-5" src="./images/image.png" alt="">
+                    <div>
+                        <div class="name mt-5 font-bold text-xl ">Iphone 17 Pro Max</div>
+                        <div class="price  font-bold text-xl mt-3 mb-15">2000$</div>
+                        <button class="absolute bottom-5 right-5 bg-yellow-300 py-2 px-5 rounded-lg">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <div class=" place-items-center">
+                <div class="todo block cart-body  w-80 h-110 pt-2  bg-blue-200 rounded-xl place-items-center relative">
+                    <img class="w-70 rounded-xl mt-5" src="./images/image.png" alt="">
+                    <div>
+                        <div class="name mt-5 font-bold text-xl ">Iphone 17 Pro Max</div>
+                        <div class="price  font-bold text-xl mt-3 mb-15">2000$</div>
+                        <button class="absolute bottom-5 right-5 bg-yellow-300 py-2 px-5 rounded-lg">Buy</button>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+    </section>
+     
+
+    <script>
+        const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+                console.log(entry.target)
+                entry.target.classList.add("show")
+            }else{
+                entry.target.classList.remove("show");
+            }
+        })
+    },{})
+    const todoElements = document.querySelectorAll(".todo")
+    todoElements.forEach(el => observer.observe(el))
+    </script>
+
+    
+</body>
+</html>
